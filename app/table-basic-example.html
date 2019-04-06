@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+  <table>
+      <tr>
+    <th [attr.rowspan]="1">RO</th>   
+    <th [attr.rowspan]="1">vehicle</th>
+    <th> details</th>
+    <th> Time</th>
+  </tr>
+    
+  <tr *ngFor= "let column of dataSource; let i= index">
+    <th [attr.rowspan]="1"  >{{column.RO}}</th>   
+    <th [attr.rowspan]="1" >{{column.vehicle}}</th>
+    <th > 
+      <span *ngFor="let w of column.details| keyvalue"> 
+        <p> {{w.value}} </p>
+      </span>
+    </th>
+     <th > 
+      <span *ngFor="let w of column.time| keyvalue"> 
+        <p> {{w.value}} </p>
+      </span>
+    </th>
+  </tr>
+</table>
+
+<!-- <table>
+  <tr *ngFor= "let column of dataSource; let i= index">
+    <th [attr.rowspan]="1"  >{{column.RO}}</th>   
+    <th [attr.rowspan]="1" >{{column.vehicle}}</th>
+    <th > 
+      <span *ngFor="let w of column.description"> 
+        <p> {{w}} </p>
+      </span>
+    </th>
+     <th > 
+      <span *ngFor="let w of column.time"> 
+        <p> {{w}} </p>
+      </span>
+    </th>
+  </tr>
+</table> -->
+
+</body>
+</html> 
